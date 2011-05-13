@@ -1,0 +1,29 @@
+/CHANGELOG.txt/1.7/Thu Mar  6 16:46:08 2008//TDRUPAL-6--3-0-RC2
+/TESTER CHECKLIST.txt/1.1/Sat Sep 13 02:01:04 2008//TDRUPAL-6--3-0-RC2
+/extending_support.txt/1.12/Thu Jan 24 09:28:05 2008//TDRUPAL-6--3-0-RC2
+D/contrib////
+D/database////
+D/geocoding////
+D/handlers////
+D/supported////
+D/tests////
+/CREDITS.txt/1.2/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/INSTALL.txt/1.11/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/TODO-3.txt/1.6/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/earth.inc/1.10/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.admin.inc/1.17/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.css/1.8/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.inc/1.95/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.info/1.3/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.install/1.41/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.module/1.222/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.token.inc/1.2/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.tpl.php/1.2/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.views.inc/1.16/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location.views_default.inc/1.5/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location_API.txt/1.10/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location_autocomplete.js/1.3/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location_distance.tpl.php/1.1/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0
+/location_user.info/1.1/Fri Dec  5 18:08:32 2008//TDRUPAL-6--3-0
+/location_user.module/1.2/Fri Dec  5 18:22:31 2008//TDRUPAL-6--3-0
+/locations.tpl.php/1.2/Mon Jan 19 09:41:55 2009//TDRUPAL-6--3-0

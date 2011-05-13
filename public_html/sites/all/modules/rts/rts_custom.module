@@ -1,0 +1,35 @@
+<?php
+//$Id:
+
+/**
+ * @file
+ *   Custom tweaks for the rocktreesky.com site.
+ */
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function rts_custom_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case 'comment_form':
+      unset($form['homepage']);
+      break;
+    case 'story_node_form':
+      // Only on node edit, not node add, since there are no terms yet then.
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $node = node_load(arg(1));
+        // Get terms to turn into hash tags.
+        $terms = taxonomy_node_get_terms($node);
+        if ($terms) {
+          $hashtags = '';
+          foreach ($terms as $term) {
+            // Only hash the terms from the tagging vocab (7).
+            $hashtags .= ($term->vid == 7) ? ' #' . $term->name : '';
+          }
+        }
+        // Add to it, don't replace it.
+        $form['twitter']['status']['#default_value'] .= $hashtags;
+      }
+      break;
+  }
+}
