@@ -12,7 +12,7 @@
   <div class="content">
     <?php print $content ?>
     <?php if ($denmark && $page == 1) : ?>
-      <div id="denmark-series"><img src="/sites/all/themes/rts/images/dk.png" />This post is part of a larger series about <a href="/tags/denmark">Denmark</a>.</div>
+      <div id="denmark-series"><img src="/sites/rocktreesky.com/themes/rts/images/dk.png" />This post is part of a larger series about <a href="/tags/denmark">Denmark</a>.</div>
     <?php endif; ?>
     <?php if ($me_stuff) : ?>
       <div id="me-stuff" class="clear-block"><?php print $me_stuff; ?></div>
