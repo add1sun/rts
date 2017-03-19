@@ -1,31 +1,33 @@
-$Id: README.txt,v 1.1.6.1 2009/04/19 21:31:24 greggles Exp $
+INTRODUCTION
+------------
 
-Description
-===========
-Token module provides a centralized API for text substitution. Unless
-you're installing another Drupal module that requires it, this software
-is probably unnecessary.
+Provides common and resuable token UI elements and missing core tokens.
 
-For more information on tokens see http://groups.drupal.org/tokens
+ * For a full description of the module, visit the project page:
+   https://drupal.org/project/token
 
-Benefits
-========
-If you're a Drupal developer, check out API.txt for detailed instructions
-on using the Token API. It allows every module to announce the placeholder
-tokens they can handle, uses simple caching to prevent duplicated work in
-a given page-view, and is pretty lightweight. It's nice. You'll like it.
+ * To submit bug reports and feature suggestions, or to track changes:
+   https://drupal.org/project/issues/token
 
-tokenSTARTER
-============
-Want to add your own custom tokens to a site? Not sure how to write a 
-module? Worry no more, it's now quite easy.
 
-1. Copy and rename the tokenSTARTER.info and tokenSTARTER.module replacing
-   every instance of STARTER with a descriptive, appropriate word.
+INSTALLATION
+------------
 
-2. Edit the .module file and change hook_token_list and hook_token_values
-   to provide whatever additional tokens or logic your site needs.
+Install as usual, see
+https://drupal.org/documentation/install/modules-themes/modules-7 for further
+information.
 
-3. Enable the module and enjoy!
 
-You should also want to read the API.txt.
+TROUBLESHOOTING
+---------------
+
+Token module doesn't provide any visible functions to the user on its own, it
+just provides token handling services for other modules.
+
+
+MAINTAINERS
+-----------
+
+Current maintainers:
+
+ * Dave Reid (https://drupal.org/user/53892)

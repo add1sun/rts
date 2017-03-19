@@ -1,8 +1,14 @@
 <?php
-// $Id: views_handler_field_search_score.inc,v 1.2 2009/02/23 23:30:38 merlinofchaos Exp $
+
+/**
+ * @file
+ * Definition of views_handler_field_search_score.
+ */
 
 /**
  * Field handler to provide simple renderer that allows linking to a node.
+ *
+ * @ingroup views_field_handlers
  */
 class views_handler_field_search_score extends views_handler_field_numeric {
   function option_definition() {
@@ -26,7 +32,7 @@ class views_handler_field_search_score extends views_handler_field_numeric {
       $form['alternate_sort'] = array(
         '#type' => 'select',
         '#title' => t('Alternative sort'),
-        '#description' => t('If no search is performed and this field does not appear, pick an alternative default table sort field.'),
+        '#description' => t('Pick an alternative default table sort field to use when the search score field is unavailable.'),
         '#options' => $options,
         '#default_value' => $this->options['alternate_sort'],
       );
@@ -66,17 +72,10 @@ class views_handler_field_search_score extends views_handler_field_numeric {
     }
   }
 
-  function click_sort($order) {
-    if (isset($this->table_alias)) {
-       $this->query->add_orderby(NULL, NULL, $order, $this->field_alias);
-    }
-  }
-
   function render($values) {
     // Only render if we exist.
     if (isset($this->table_alias)) {
       return parent::render($values);
     }
   }
-
 }

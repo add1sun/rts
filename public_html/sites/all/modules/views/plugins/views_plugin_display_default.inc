@@ -1,5 +1,5 @@
 <?php
-// $Id: views_plugin_display_default.inc,v 1.1 2008/09/03 19:21:30 merlinofchaos Exp $
+
 /**
  * @file
  * Contains the default display plugin.
@@ -29,6 +29,7 @@ class views_plugin_display_default extends views_plugin_display {
    * @code
    *   $view->set_arguments($args);
    *   $view->build('default'); // Build the query
+   *   $view->pre_execute(); // Pre-execute the query.
    *   $view->execute(); // Run the query
    *   $output = $view->render(); // Render the view
    * @endcode

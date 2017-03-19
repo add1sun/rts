@@ -1,7 +1,14 @@
 <?php
-// $Id: views_handler_sort_comment_thread.inc,v 1.1 2008/09/03 19:21:29 merlinofchaos Exp $
+
 /**
- * Sort handler for ordering by thread
+ * @file
+ * Definition of views_handler_sort_comment_thread.
+ */
+
+/**
+ * Sort handler for ordering by thread.
+ *
+ * @ingroup views_sort_handlers
  */
 class views_handler_sort_comment_thread extends views_handler_sort {
   function query() {

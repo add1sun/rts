@@ -1,5 +1,9 @@
 <?php
-// $Id: views_handler_sort_date.inc,v 1.1 2008/09/03 19:21:28 merlinofchaos Exp $
+
+/**
+ * @file
+ * Definition of views_handler_sort_date.
+ */
 
 /**
  * Basic sort handler for dates.

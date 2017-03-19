@@ -1,7 +1,7 @@
 <?php
-// $Id: views-view-row-comment.tpl.php,v 1.1 2008/05/15 22:55:18 merlinofchaos Exp $
+
 /**
- * @file views-view-row-comment.tpl.php
+ * @file
  * Default simple view template to display a single comment.
  *
  * Rather than doing anything with this particular template, it is more

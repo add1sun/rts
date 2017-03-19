@@ -1,6 +1,12 @@
-; $Id: php.info,v 1.2 2007/06/08 05:50:55 dries Exp $
 name = PHP filter
 description = Allows embedded PHP code/snippets to be evaluated.
-package = Core - optional
+package = Core
 version = VERSION
-core = 6.x
+core = 7.x
+files[] = php.test
+
+; Information added by Drupal.org packaging script on 2017-02-01
+version = "7.54"
+project = "drupal"
+datestamp = "1485986921"
+

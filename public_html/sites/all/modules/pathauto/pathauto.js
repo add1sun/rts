@@ -1,23 +1,22 @@
-// $Id: pathauto.js,v 1.4.2.1 2009/04/18 17:10:10 freso Exp $
-if (Drupal.jsEnabled) {
-  $(document).ready(function() {
-    if ($("#edit-pathauto-perform-alias").size() && $("#edit-pathauto-perform-alias").attr("checked")) {
-      // Disable input and hide its description.
-      $("#edit-path").attr("disabled","disabled");
-      $("#edit-path-wrapper > div.description").hide(0);
-    }
-    $("#edit-pathauto-perform-alias").bind("click", function() {
-      if ($("#edit-pathauto-perform-alias").attr("checked")) {
-        // Auto-alias checked; disable input.
-        $("#edit-path").attr("disabled","disabled");
-        $("#edit-path-wrapper > div[class=description]").slideUp('fast');
+(function ($) {
+
+Drupal.behaviors.pathFieldsetSummaries = {
+  attach: function (context) {
+    $('fieldset.path-form', context).drupalSetSummary(function (context) {
+      var path = $('.form-item-path-alias input', context).val();
+      var automatic = $('.form-item-path-pathauto input', context).attr('checked');
+
+      if (automatic) {
+        return Drupal.t('Automatic alias');
+      }
+      else if (path) {
+        return Drupal.t('Alias: @alias', { '@alias': path });
       }
       else {
-        // Auto-alias unchecked; enable input.
-        $("#edit-path").removeAttr("disabled");
-        $("#edit-path")[0].focus();
-        $("#edit-path-wrapper > div[class=description]").slideDown('fast');
+        return Drupal.t('No alias');
       }
     });
-  });
-}
+  }
+};
+
+})(jQuery);

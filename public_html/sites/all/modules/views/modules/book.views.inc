@@ -1,18 +1,14 @@
 <?php
-// $Id: book.views.inc,v 1.5.4.2 2009/11/30 19:44:09 merlinofchaos Exp $
+
 /**
  * @file
- * Provide views data and handlers for book.module
- */
-
-/**
- * @defgroup views_book_module book.module handlers
+ * Provide views data and handlers for book.module.
  *
- * @{
+ * @ingroup views_module_handlers
  */
 
 /**
- * Implementation of hook_views_data()
+ * Implements hook_views_data().
  */
 function book_views_data() {
   // ----------------------------------------------------------------------
@@ -31,7 +27,6 @@ function book_views_data() {
     'help' => t('The book the node is in.'),
     'relationship' => array(
       'base' => 'node',
-      'base field' => 'bid',
       'handler' => 'views_handler_relationship',
       'label' => t('Book'),
     ),
@@ -121,5 +116,16 @@ function book_views_data() {
 }
 
 /**
- * @}
+ * Implements hook_views_plugins().
  */
+function book_views_plugins() {
+ return array(
+   'module' => 'views',
+   'argument default' => array(
+     'book_root' => array(
+       'title' => t('Book root from current node'),
+       'handler' => 'views_plugin_argument_default_book_root'
+     ),
+   ),
+ );
+}

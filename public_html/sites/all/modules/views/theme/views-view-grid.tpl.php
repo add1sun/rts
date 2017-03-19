@@ -1,7 +1,7 @@
 <?php
-// $Id: views-view-grid.tpl.php,v 1.3 2008/06/14 17:42:43 merlinofchaos Exp $
+
 /**
- * @file views-view-grid.tpl.php
+ * @file
  * Default simple view template to display a rows in a grid.
  *
  * - $rows contains a nested array of rows. Each row contains an array of
@@ -13,21 +13,16 @@
 <?php if (!empty($title)) : ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
-<table class="views-view-grid">
+<table class="<?php print $class; ?>"<?php print $attributes; ?>>
+  <?php if (!empty($caption)) : ?>
+    <caption><?php print $caption; ?></caption>
+  <?php endif; ?>
+
   <tbody>
     <?php foreach ($rows as $row_number => $columns): ?>
-      <?php
-        $row_class = 'row-' . ($row_number + 1);
-        if ($row_number == 0) {
-          $row_class .= ' row-first';
-        }
-        elseif (count($rows) == ($row_number + 1)) {
-          $row_class .= ' row-last';
-        }
-      ?>
-      <tr class="<?php print $row_class; ?>">
+      <tr <?php if ($row_classes[$row_number]) { print 'class="' . $row_classes[$row_number] .'"';  } ?>>
         <?php foreach ($columns as $column_number => $item): ?>
-          <td class="<?php print 'col-'. ($column_number + 1); ?>">
+          <td <?php if ($column_classes[$row_number][$column_number]) { print 'class="' . $column_classes[$row_number][$column_number] .'"';  } ?>>
             <?php print $item; ?>
           </td>
         <?php endforeach; ?>

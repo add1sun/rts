@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ *   Custom tweaks for the rocktreesky.com site.
+ */
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function rts_custom_form_alter(&$form, $form_state, $form_id) {
+  switch ($form['#id']) {
+    case 'comment-form':
+      // Remove the homepage field from the comment form.
+      $form['author']['homepage']['#access'] = FALSE;
+      break;
+  }
+}

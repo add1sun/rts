@@ -1,39 +1,52 @@
 <?php
-//print_r($node->taxonomy);
+//krumo(get_defined_vars());
 ?>
-<div id="node-<?php print $node->nid; ?>" class="node<?php if ($sticky) { print ' sticky'; } ?><?php if (!$status) { print ' node-unpublished'; } ?>">
+  <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
-<?php print $picture ?>
+    <?php print $user_picture; ?>
 
-<?php if ($page == 0): ?>
-  <h2><a href="<?php print $node_url ?>" title="<?php print $title ?>"><?php print $title ?></a></h2>
-<?php endif; ?>
-
-  <div class="content">
-    <?php print $content ?>
-    <?php if ($denmark && $page == 1) : ?>
-      <div id="denmark-series"><img src="/sites/rocktreesky.com/themes/rts/images/dk.png" />This post is part of a larger series about <a href="/tags/denmark">Denmark</a>.</div>
+    <?php print render($title_prefix); ?>
+    <?php if (!$page): ?>
+      <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
     <?php endif; ?>
-    <?php if ($me_stuff) : ?>
-      <div id="me-stuff" class="clear-block"><?php print $me_stuff; ?></div>
-    <?php endif; ?>
+    <?php print render($title_suffix); ?>
+
+    <div class="content"<?php print $content_attributes; ?>>
+      <?php
+        // Hide the comments and terms and render them later.
+        hide($content['comments']);
+        hide($content['taxonomy_vocabulary_7']);
+        hide($content['field_category']);
+        // Hide links. We don't need the add comment link with the form there.
+        hide($content['links']);
+        print render($content);
+      ?>
   </div>
 
-  <div class="meta">
-    <div class="meta-term"><?php print $meta_term ?></div>
-    
-    <?php if ($submitted): ?>
-      <div class="submitted"><?php print $submitted; ?></div>
+  <div class="meta">    
+    <?php if ($display_submitted): ?>
+      <div class="submitted">
+        <?php print $submitted; ?>
+      </div>
     <?php endif; ?>
+
+      <?php if ($content['field_category']): ?>
+        <div class="category">
+          <strong><?php print render($content['field_category']); ?></strong>
+        </div>
+      <?php endif; ?>
     
-    <?php if ($taxonomy): ?>
-      <div class="tags"><?php print $terms ?></div>
-    <?php endif;?>
+      <?php if ($content['taxonomy_vocabulary_7']): ?>
+        <div class="tags">
+          <?php print render($content['taxonomy_vocabulary_7']); ?>
+        </div>
+      <?php endif; ?>
   </div>
 
-  <?php if ($links): ?>
-    <div class="extra"><?php print $links; ?></div>
+  <?php if ($content['comments']): ?>
+    <div class="comments">
+      <?php print render($content['comments']); ?>
+    </div>
   <?php endif; ?>
-<div class="divider"></div>
 
 </div>

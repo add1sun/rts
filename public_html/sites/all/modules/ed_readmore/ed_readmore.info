@@ -1,6 +1,0 @@
-name = "Read More Tweak"
-description = Customize the 'Read more' link shown in drupal teasers.
-package = "Site Tweaks"
-core = 6.x
-
-
